@@ -13,5 +13,14 @@ public class CustomerController {
 		theModel.addAttribute("customer", new Customer());
 		return "customer-form";
 	}
+	
+	@RequestMapping("/processForm")
+	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theResult) {
+		if(theResult.hasErrors()) {
+			return "customer-form";
+		} else {
+			return "customer-confirmation";
+		}
+	}
 
 }
