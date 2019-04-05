@@ -9,6 +9,8 @@ public class Student {
 	private String favoriteLanguage;
 	private LinkedHashMap<String, String> favoriteLanguageOptions;
 	private String[] operatingSystems;
+	@CourseCode(value="LUV", message="must start with LUV")
+	private String courseCode;
 	
 	public Student() {
  	// populate favorite language options
@@ -65,5 +67,13 @@ public class Student {
 
 	public void setOperatingSystems(String[] operatingSystems) {
 		this.operatingSystems = operatingSystems;
+	}
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 }
