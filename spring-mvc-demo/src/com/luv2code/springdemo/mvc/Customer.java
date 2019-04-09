@@ -15,6 +15,9 @@ public class Customer {
 	@Pattern(regexp="^[a-zA-Z0-9] {5}", message="only 5 chars/digits")
 	private String postalCode;
 	
+	@CourseCode(value="LUV", message="must start with LUV")
+	private String courseCode;
+	
 	/**
 	 * @return the postalCode
 	 */
@@ -71,5 +74,11 @@ public class Customer {
 		this.lastName = lastName;
 	}
 	
-	
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
 }
